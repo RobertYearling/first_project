@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <h1>View</h1>
+            <p><a href="/back">Back</a> | <a href="/logout">Logout</a></p>
+        </div>
+        <div class="travel">
+            <h2>{{ trips.destination }}</h2>
+            <p>Planned By: {{ trips.planner.f_name }} {{ trips.planner.l_name }}</p>
+            <p>Description: {{ trips.decription }}</p>
+            <p>Travel Date From: {{ trips.travel_from }}</p>
+            <p>Travel Date To: {{ trips.travel_to }}</p>
+        </div>
+        <div class="travel">
+            <h2>Other Users Joining the Trip:</h2>
+            {% for others in join.joining.all %}
+            <p>{{ others.f_name }} {{ others.l_name }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

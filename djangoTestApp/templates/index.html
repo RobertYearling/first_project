@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Welcome to Trip Buddy</h1>
+        </div>
+        <div class="row">
+            {% if messages %} <!-- messages -->
+                {% for message in messages %} <!-- for message --> <!-- in messages -->
+                    <p id="error">{{ message }}</p> <!-- message -->
+                {% endfor %} <!-- End of For Loop -->
+            {% endif %} <!-- End of If Statement -->
+        </div>
+        <div class="forms_row">
+            <h1>Registration</h1>
+            <form action="/register" method="post">
+                {% csrf_token %}
+                <p>First Name: <input type="text" name="f_name" id=""></p>
+                <p>Last Name: <input type="text" name="l_name" id=""></p>
+                <p>Email: <input type="text" name="email" id=""></p>
+                <p>Password: <input type="text" name="pswd" id=""></p>
+                <p>Confirm Password: <input type="text" name="cfpswd" id=""></p>
+                <p><input type="submit" value="Register"></p>
+            </form>
+            <h1>Login</h1>
+            <form action="/login" method="post">
+                {% csrf_token %}
+                <p>Email: <input type="text" name="email" id=""> </p>
+                <p>Password: <input type="text" name="pswd" id=""> </p>
+                <p><input type="submit" value="login"></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

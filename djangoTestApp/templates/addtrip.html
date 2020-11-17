@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Trip</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <h1>Add a Job</h1>
+            <p><a href="/back">Back</a> | <a href="/logout">Logout</a></p>
+        </div>
+        <div class="row">
+            {% if messages %} <!-- messages -->
+                {% for message in messages %} <!-- for message --> <!-- in messages -->
+                    <p id="error">{{ message }}</p> <!-- message -->
+                {% endfor %} <!-- End of For Loop -->
+            {% endif %} <!-- End of If Statement -->
+        </div>
+        <div class="row">
+            <form action="/addTrip" method="post">
+                {% csrf_token %}
+                <p>Destination: <input type="text" name="dest" id=""></p>
+                <p>Description: <textarea name="desc" id="" cols="30" rows="10"></textarea></p>
+                <p>Travel Date From: <input type="date" name="travel_from" id=""></p>
+                <p>Travel Date To: <input type="date" name="travel_to" id=""></p>
+                <p><input type="submit" value="Submit"></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

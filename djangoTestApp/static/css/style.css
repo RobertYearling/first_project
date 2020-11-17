@@ -1,0 +1,59 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 30px auto;
+    width: 900px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+p {
+    padding: 20px;
+}
+
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin: 10px auto;
+}
+
+tr,
+th,
+td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: left;
+    padding:  3px 15px 3px 3px;
+}
+
+#container {
+    background-color: slategrey;
+    color: whitesmoke;
+    padding: 10px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#error {
+    color: red;
+}
+
+#message {
+    text-transform: capitalize;
+}
+
+.forms_row {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+}
